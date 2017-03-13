@@ -1,5 +1,5 @@
 //
-//  CMEmitterView.swift
+//  CHEmitterView.swift
 //  彩带动画
 //
 //  Created by CM on 2017/3/13.
@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class CMEmitterView: UIView {
+class CHEmitterView: UIView {
     
    
     let emitterLayer = CAEmitterLayer()

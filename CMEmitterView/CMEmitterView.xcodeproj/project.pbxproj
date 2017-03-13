@@ -13,7 +13,7 @@
 		836734C71E766C0A0044B3C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 836734C61E766C0A0044B3C9 /* Assets.xcassets */; };
 		836734CA1E766C0A0044B3C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 836734C81E766C0A0044B3C9 /* LaunchScreen.storyboard */; };
 		836734D21E766C1E0044B3C9 /* 彩花.png in Resources */ = {isa = PBXBuildFile; fileRef = 836734D11E766C1E0044B3C9 /* 彩花.png */; };
-		836734D91E766E9A0044B3C9 /* CMEmitterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836734D81E766E9A0044B3C9 /* CMEmitterView.swift */; };
+		836734D91E766E9A0044B3C9 /* CHEmitterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836734D81E766E9A0044B3C9 /* CHEmitterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		836734C91E766C0A0044B3C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		836734CB1E766C0A0044B3C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		836734D11E766C1E0044B3C9 /* 彩花.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "彩花.png"; sourceTree = "<group>"; };
-		836734D81E766E9A0044B3C9 /* CMEmitterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMEmitterView.swift; sourceTree = "<group>"; };
+		836734D81E766E9A0044B3C9 /* CHEmitterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHEmitterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +73,7 @@
 		836734D71E766E9A0044B3C9 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				836734D81E766E9A0044B3C9 /* CMEmitterView.swift */,
+				836734D81E766E9A0044B3C9 /* CHEmitterView.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -152,7 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				836734D91E766E9A0044B3C9 /* CMEmitterView.swift in Sources */,
+				836734D91E766E9A0044B3C9 /* CHEmitterView.swift in Sources */,
 				836734C21E766C0A0044B3C9 /* ViewController.swift in Sources */,
 				836734C01E766C0A0044B3C9 /* AppDelegate.swift in Sources */,
 			);
@@ -316,6 +316,7 @@
 				836734D01E766C0A0044B3C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

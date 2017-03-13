@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var emitterView: CMEmitterView!
+    @IBOutlet weak var emitterView: CHEmitterView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
