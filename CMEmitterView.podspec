@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
 s.name             = 'CMEmitterView'
-s.version          = '1.0.0'
+s.version          = '1.0.1'
 s.summary          = 'Swift3的自定义 CMEmitterView'
 
 
