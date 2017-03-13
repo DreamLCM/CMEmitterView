@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CMEmitterView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vti-wt-hoO">
+                                <rect key="frame" x="0.0" y="601" width="123" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="RWB-fU-0de"/>
+                                    <constraint firstAttribute="width" constant="123" id="hT9-MG-4c9"/>
+                                </constraints>
+                                <state key="normal" title="begin"/>
+                                <connections>
+                                    <action selector="begin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cKt-35-Do1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUH-ua-HWZ">
+                                <rect key="frame" x="252" y="601" width="123" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="GqT-lR-VxJ"/>
+                                    <constraint firstAttribute="width" constant="123" id="aQR-wL-sF2"/>
+                                </constraints>
+                                <state key="normal" title="stop"/>
+                                <connections>
+                                    <action selector="stop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qCq-3W-uXI"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KDU-fg-2Ai" customClass="CMEmitterView" customModule="CMEmitterView" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="232.5" width="375" height="202"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="752-nb-Vhm"/>
+                                    <constraint firstAttribute="height" constant="202" id="lCP-yJ-cD8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vti-wt-hoO" secondAttribute="bottom" id="DDO-QQ-Xd2"/>
+                            <constraint firstItem="KDU-fg-2Ai" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DOr-Vz-Qc5"/>
+                            <constraint firstAttribute="trailing" secondItem="KDU-fg-2Ai" secondAttribute="trailing" id="Jw7-Mb-Vn5"/>
+                            <constraint firstAttribute="trailing" secondItem="QUH-ua-HWZ" secondAttribute="trailing" id="LaV-h2-Pvv"/>
+                            <constraint firstItem="KDU-fg-2Ai" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="PHQ-xb-2dG"/>
+                            <constraint firstItem="vti-wt-hoO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hHV-ha-SnO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QUH-ua-HWZ" secondAttribute="bottom" id="kyI-Uy-Fdz"/>
+                            <constraint firstItem="KDU-fg-2Ai" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="t0v-Kx-Zhp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emitterView" destination="KDU-fg-2Ai" id="utM-1a-KBJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
