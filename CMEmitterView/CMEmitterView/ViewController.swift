@@ -10,11 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var emitterView: CHEmitterView!
-    
+    var emitterView = CHEmitterView()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
+        
         self.emitterView.backgroundImage = UIImage(named: "彩花.png")?.cgImage
         
     }
@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func begin(_ sender: UIButton) {
-        self.emitterView.birthRate = 1000
+        self.emitterView.birthRate = 100
         self.emitterView.beginEmitter()
     }
     

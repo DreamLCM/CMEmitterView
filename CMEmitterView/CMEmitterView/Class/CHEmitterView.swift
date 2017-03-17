@@ -14,7 +14,9 @@ class CHEmitterView: UIView {
    
     let emitterLayer = CAEmitterLayer()
     let emitterCell = CAEmitterCell()
+    var timer = Timer()
     
+
     // 平面的发射方向
     @IBInspectable public var emissionLongitude = CGFloat(M_PI) {
         didSet {
@@ -82,7 +84,7 @@ class CHEmitterView: UIView {
     
    
     
-    var birthRate: Float = 100 {
+    var birthRate: Float = 0 {
         didSet {
            self.emitterCell.birthRate = birthRate
         }
@@ -173,17 +175,35 @@ class CHEmitterView: UIView {
         emitterCell.birthRate = birthRate
 
 //        emitterCell.birthRate = birthRate
-        self.layer.addSublayer(emitterLayer)
+//        self.layer.addSublayer(emitterLayer)
         
         
     }
     
     func stopEmitter() {
-        self.emitterLayer.setValue(0, forKeyPath: "emitterCells.smoke.birthRate")
+//        self.emitterLayer.setValue(0, forKeyPath: "emitterCells.smoke.birthRate")
+        self.emitterLayer.removeFromSuperlayer()
     }
     
     func beginEmitter() {
+        let viewLayer = UIApplication.shared.windows.first
+        viewLayer?.layer.addSublayer(self.emitterLayer)
+//        self.layer.addSublayer(self.emitterLayer)
         self.emitterLayer.setValue(self.birthRate, forKeyPath: "emitterCells.smoke.birthRate")
+        
     }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
