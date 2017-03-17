@@ -97,6 +97,13 @@ class CHEmitterView: UIView {
         }
     }
     
+    // 延迟时间
+    var delayTime: TimeInterval = 0.3 {
+        didSet {
+            
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setup()
@@ -201,7 +208,7 @@ class CHEmitterView: UIView {
         
         if self.isRepeatEmitter == false {
             self.addViewLayer()
-            _ = self.delay(2) {
+            _ = self.delay(self.delayTime) {
                 self.emitterLayer.setValue(0, forKeyPath: "emitterCells.smoke.birthRate")
                 _ = self.delay(TimeInterval(self.lifetime), task: {
                     self.emitterLayer.removeFromSuperlayer()
