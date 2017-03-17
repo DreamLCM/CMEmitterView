@@ -16,7 +16,6 @@ class ViewController: UIViewController {
         self.view.backgroundColor = UIColor.black
         
         self.emitterView.backgroundImage = UIImage(named: "彩花.png")?.cgImage
-        
     }
     
     

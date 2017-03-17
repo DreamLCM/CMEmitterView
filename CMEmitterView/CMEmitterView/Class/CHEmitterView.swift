@@ -90,6 +90,12 @@ class CHEmitterView: UIView {
         }
     }
     
+    // 是否重复彩带
+    var isRepeatEmitter: Bool = false {
+        didSet {
+            
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -180,23 +186,80 @@ class CHEmitterView: UIView {
         
     }
     
+    // 停止彩带
     func stopEmitter() {
-//        self.emitterLayer.setValue(0, forKeyPath: "emitterCells.smoke.birthRate")
-        self.emitterLayer.removeFromSuperlayer()
-    }
-    
-    func beginEmitter() {
-        let viewLayer = UIApplication.shared.windows.first
-        viewLayer?.layer.addSublayer(self.emitterLayer)
-//        self.layer.addSublayer(self.emitterLayer)
-        self.emitterLayer.setValue(self.birthRate, forKeyPath: "emitterCells.smoke.birthRate")
+        self.emitterLayer.setValue(0, forKeyPath: "emitterCells.smoke.birthRate")
+        _ = self.delay(TimeInterval(self.lifetime), task: {
+            self.emitterLayer.removeFromSuperlayer()
+        })
         
     }
     
+    
+    // 开始彩带
+    func beginEmitter() {
+        
+        if self.isRepeatEmitter == false {
+            self.addViewLayer()
+            _ = self.delay(2) {
+                self.emitterLayer.setValue(0, forKeyPath: "emitterCells.smoke.birthRate")
+                _ = self.delay(TimeInterval(self.lifetime), task: {
+                    self.emitterLayer.removeFromSuperlayer()
+                })
+            }
+
+        } else {
+            self.addViewLayer()
+        }
+        
+    }
+
 }
 
 
+extension CHEmitterView {
+    
+    // 添加动画
+    func addViewLayer() {
+        let viewLayer = UIApplication.shared.windows.first
+        viewLayer?.layer.addSublayer(self.emitterLayer)
+        self.emitterLayer.setValue(self.birthRate, forKeyPath: "emitterCells.smoke.birthRate")
+    }
 
+    
+    typealias Task = (_ cancel : Bool) -> ()
+    //延迟执行
+    func delay(_ time:TimeInterval, task:@escaping ()->()) ->  Task? {
+        
+        func dispatch_later(_ block:@escaping ()->()) {
+            DispatchQueue.main.asyncAfter(
+                deadline: DispatchTime.now() + Double(Int64(time * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC),
+                execute: block)
+        }
+        
+        let closure = task
+        var result: Task?
+        
+        let delayedClosure: Task = {
+            cancel in
+            if (cancel == false) {
+                DispatchQueue.main.async(execute: closure);
+            }
+            result = nil
+        }
+        
+        result = delayedClosure
+        
+        dispatch_later {
+            if let delayedClosure = result {
+                delayedClosure(false)
+            }
+        }
+        
+        return result;
+    }
+
+}
 
 
 
